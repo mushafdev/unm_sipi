@@ -1,0 +1,81 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f3f4f6;
+    color: #333;
+}
+.header {
+    background-color: #0056a3;
+    color: white;
+    padding: 30px;
+    text-align: center;
+    border-bottom: 10px solid #003b73;
+}
+.header h1 {
+    margin: 0;
+    font-size: 2.5em;
+}
+.header p {
+    font-size: 1.2em;
+    margin-top: 5px;
+}
+.container {
+    padding: 20px;
+}
+.card {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    padding: 20px;
+}
+.card h2 {
+    border-left: 5px solid #0056a3;
+    padding-left: 10px;
+    color: #0056a3;
+    margin-top: 0;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+table th {
+    background-color: #0056a3;
+    color: white;
+    padding: 10px;
+    text-align: left;
+    font-size: 1em;
+}
+table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+}
+table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+.footer {
+    text-align: center;
+    padding: 15px;
+    background-color: #f1f1f1;
+    color: #555;
+    font-size: 0.9em;
+    border-top: 2px solid #ddd;
+}
+.badge {
+    display: inline-block;
+    padding: 5px 10px;
+    font-size: 0.9em;
+    border-radius: 5px;
+    color: white;
+}
+.badge.success {
+    background-color: #28a745;
+}
+.badge.warning {
+    background-color: #ffc107;
+}
+.badge.danger {
+    background-color: #dc3545;
+}

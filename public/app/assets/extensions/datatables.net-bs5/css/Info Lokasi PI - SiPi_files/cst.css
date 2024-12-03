@@ -1,0 +1,35 @@
+html,body{font-family: Poppins,Helvetica,sans-serif !important;}
+.avatar-2xl img,html[data-bs-theme=dark] .avatar-2xl img  {width: 150px;height: 150px;}
+.cursor-pointer{cursor: pointer;}
+.parsley-error{border-color: #dc3545;}
+.parsley-errors-list{color: #dc3545;list-style-type: none;padding-left: 0px;}
+.layout-horizontal .header-top .logo img {
+    height: 54px;
+}
+.sidebar-wrapper{
+    background: bisque;
+}
+.sidebar-wrapper .sidebar-header img {
+    height: 2.2rem;
+}
+html[data-bs-theme=dark] .sidebar-wrapper .sidebar-header img {
+    height: 2.2rem;
+    filter: invert(1);
+}
+.modal-load{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #00000054;
+    z-index: 1;
+}
+
+.modal-load .spinner-border{
+    width: 60px;
+    height: 60px;
+    border: 7px solid;
+    border-right-color: transparent;
+}

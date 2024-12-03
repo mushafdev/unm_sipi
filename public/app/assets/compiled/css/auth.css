@@ -1,0 +1,19 @@
+body{background-color:var(--bs-body-bg)}#auth{height:100vh;overflow-x:hidden}#auth #auth-right{height:100%;background:bisque;}#auth #auth-left{padding:1rem;max-width:400px;}#auth #auth-left .auth-title{font-size:2.5rem;margin-bottom:1rem}#auth #auth-left .auth-subtitle{font-size:1.2rem;line-height:2rem;color:#a8aebb}#auth #auth-left .auth-logo{margin-bottom:2rem}#auth #auth-left .auth-logo img{height:2rem}@media screen and (max-width: 1399.9px){#auth #auth-left{padding:3rem}}@media screen and (max-width: 767px){#auth #auth-left{padding:5rem}}@media screen and (max-width: 576px){#auth #auth-left{padding:5rem 3rem}}html[data-bs-theme=dark] #auth-right{background:url(./png/4853433.png),linear-gradient(90deg,#2d499d,#3f5491)}
+.img-captcha{
+    width: 168px;
+    height: 45px;
+    background-color:#dfdbdb;
+}
+
+#auth #auth-right {
+    height: 100%;
+    background: bisque;
+    background-image: url('/app/assets/static/images/bg/menara-phinisi-unm.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: bottom;
+}
+#auth #auth-left .auth-logo img {
+    height: 4rem;
+}
+
