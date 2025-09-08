@@ -5,6 +5,7 @@ namespace App\Http\Controllers\a;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class AdminLoginController extends Controller
 {
@@ -40,9 +41,11 @@ class AdminLoginController extends Controller
 
             if (Auth::attempt(['username' => addslashes($request->username), 'password' => $request->password, 'aktif' => 'Y'],false)) {
                 $user=Auth::user();
+                $detailData=DB::table($user->type)->where('user_id',$user->id)->first();
                 $request->session()->put('id',$user->id);
+                $request->session()->put('detailUser',$detailData);
                 $request->session()->put('role',$user->role);
-                return redirect()->intended('/admin/dashboard');
+                return redirect()->intended('/dashboard');
                 
                 
             }
@@ -55,6 +58,6 @@ class AdminLoginController extends Controller
     public function logout(Request $request){
         $request->session()->flush();
         Auth::logout();
-        return redirect('admin-login');
+        return redirect('login');
     }
 }

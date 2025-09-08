@@ -16,7 +16,7 @@ class SettingSeeder extends Seeder
     public function run()
     {
          DB::table('settings')->insert([
-            ['id'=>'setting','nama_web'=>'My Company','email'=>'hi@company.com','alamat'=>'Jl. Jalan','telp'=>'085423444567','wa'=>'085875342122','created_at' => now(), 'updated_at' => now()],
+            ['id'=>'setting','nama_web'=>'My Company','email'=>'hi@company.com','alamat'=>'Jl. Jalan','ppn'=>11,'telp'=>'085423444567','wa'=>'085875342122','created_at' => now(), 'updated_at' => now()],
          ]);
 
     }

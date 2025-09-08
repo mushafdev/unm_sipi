@@ -122,5 +122,5 @@
 </div>
 
 <script src="{{asset('app/assets/extensions/cropper/cropper.min.js')}}"></script>
-<script src="{{asset('app/assets/pages/setting.js')}}"></script>
+<script src="{{asset('app/assets/pages/setting.js')}}?v={{identity()['assets_version']}}"></script>
 @endsection

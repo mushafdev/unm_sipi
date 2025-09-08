@@ -21,6 +21,7 @@ return new class extends Migration
             $table->string('wa')->nullable();
             $table->string('telp')->nullable();
             $table->string('tax')->nullable();
+            $table->tinyInteger('ppn')->nullable();
             $table->string('logo')->nullable();
             $table->string('favicon')->nullable();
             $table->timestamps();

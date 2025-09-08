@@ -1,0 +1,32 @@
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+return new class extends Migration
+{
+    /**
+     * Run the migrations.
+     */
+    public function up(): void
+    {
+        Schema::create('pendaftaran_service_dokters', function (Blueprint $table) {
+            $table->id();
+            $table->unsignedBigInteger('pendaftaran_service_id');
+            $table->foreign('pendaftaran_service_id')->references('id')->on('pendaftaran_services')->onUpdate('cascade')->onDelete('cascade');
+            $table->unsignedBigInteger('dokter_id');
+            $table->foreign('dokter_id')->references('id')->on('dokters')->onUpdate('cascade')->onDelete('restrict');
+            $table->string('catatan')->nullable();
+            $table->timestamps();
+        });
+    }
+
+    /**
+     * Reverse the migrations.
+     */
+    public function down(): void
+    {
+        Schema::dropIfExists('pendaftaran_service_dokters');
+    }
+};

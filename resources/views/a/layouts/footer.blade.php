@@ -5,7 +5,7 @@
         </div>
         <div class="float-end">
             <p>Support By <span class="text-danger"></span>
-                <a href="#">{{identity()['by']}}</a></p>
+                <a href="#">{{identity()['support']}}</a></p>
         </div>
     </div>
 </footer>

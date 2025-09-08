@@ -20,21 +20,24 @@
     <div id="auth">     
         <div class="row h-100">
             
-            <div class="col-lg-7 d-none d-lg-block">
-                @include('u.component.login_left')
+            <div class="col-md-7">
+                @include('a.component.login_left')
             </div>
-            <div class="col-lg-5 col-12 d-flex justify-content-center align-items-center">
+            <div class="col-md-5 col-12 d-flex justify-content-center align-items-center wrapper-login">
                 <div id="auth-left">
-                    <div class="auth-logo">
-                        <a href="#"><img src="{{asset('app/assets/compiled/svg/logo.svg')}}" alt="Logo"></a>
+                    <div class="auth-logo text-center">
+                        <a href="#"><img src="{{asset('app/assets/static/images/logo/logo.png')}}" alt="Logo"></a>
                     </div>
-                    <h3 class="auth-title">Log in Administrator</h3>
                     <p class="auth-subtitle mb-3">Hello, <span class="font-bold">Welcome</span></p>
-
-                    <form action="{{route('admin_login.authenticate')}}" method="POST" data-reload-captcha="{{route('admin_login.reload_captcha')}}" id="login" autocomplete="false">
+                    
+                    @if (session()->has('success'))
+                        <div class="alert alert-light-success color-success"><i class="bi bi-check-circle"></i> 
+                            {{ session('success') }}</div>
+                    @endif
+                    <form action="{{route('admin.authenticate')}}" method="POST" data-reload-captcha="{{route('admin.reload_captcha')}}" id="login" autocomplete="false">
                         {{ csrf_field() }}
                         <div class="form-group position-relative has-icon-left mb-4">
-                            <input type="text" class="form-control form-control-lg" name="username" placeholder="Username" value="{{old('username')}}">
+                            <input type="text" class="form-control form-control-lg" name="username" placeholder="Username atau Email" value="{{old('username')}}">
                             <div class="form-control-icon">
                                 <i class="bi bi-person"></i>
                             </div>
@@ -48,7 +51,7 @@
                                 <div class="form-control-icon">
                                     <i class="bi bi-shield-lock"></i>
                                 </div>
-                                <button class="btn btn-primary show-pass" type="button"><i class="bi bi-eye-slash"></i></button>
+                                <button class="btn btn-pink show-pass" type="button"><i class="bi bi-eye-slash"></i></button>
                                 
                             </div>
                             @if($errors->has('password'))
@@ -61,24 +64,24 @@
                         <div class="form-group position-relative mb-4 row">
                             <div class="d-flex">
                                 <span><img class="img-captcha" src="{{captcha_src()}}"></span>
-                                <button class="btn btn-primary reload-cpt" type="button"><i class="bi bi-arrow-repeat"></i></button>
+                                <button class="btn btn-pink reload-cpt" type="button"><i class="bi bi-arrow-repeat"></i></button>
                                 <input type="text" class="form-control ms-2" name="captcha" placeholder="Enter Captcha"> 
                             </div>
                             @if($errors->has('captcha'))
                             <p class="text-danger mb-0">{{ $errors->first('captcha') }}</p>
                             @endif
                         </div>
-                        <button class="btn btn-primary btn-block btn-lg shadow-lg mt-3">Log in</button>
+                        <button class="btn btn-warning btn-block btn-lg shadow-lg mt-3">Log in</button>
                     </form>
-                    <div class="text-center mt-3 text-lg fs-5">
-                        <p><a class="font-bold" href="auth-forgot-password.html">Forgot password?</a>.</p>
+                    <div class="text-center mt-3 text-md fs-6">
+                        <p class="text-gray-600">Support By <a href="#" class="font-bold text-primary">{{identity()['support']}}</a>.</p>
                     </div>
                 </div>
             </div>
         </div>
     </div>
     <script src="{{asset('app/assets/extensions/jquery/jquery.min.js')}}"></script>
-    <script src="{{asset('app/assets/pages/login.js')}}"></script>
+    <script src="{{asset('app/assets/pages/login.js')}}?v={{identity()['assets_version']}}"></script>
 </body>
 
 </html>

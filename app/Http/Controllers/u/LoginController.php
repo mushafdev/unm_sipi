@@ -5,13 +5,12 @@ namespace App\Http\Controllers\u;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use App\Models\Jurusan;
-use App\Models\Prodi;
-use App\Models\Fakultas;
-use App\Models\Mahasiswa;
+use App\Models\Ujian;
+use App\Models\UjianPeserta;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\VerifikasiEmail;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\DB;
 use Exception;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Password;
@@ -185,6 +184,7 @@ class LoginController extends Controller
             $rules = [
                 'username'=>'required|min:5|max:50',
                 'password'=>'required|min:5|max:50',
+                'pin'=>'required|min:5|max:50',
                 'captcha' => 'required|captcha'
             ];
 
@@ -199,14 +199,26 @@ class LoginController extends Controller
 
             $request->validate($rules,$messages);
             $fieldType = filter_var($request->username, FILTER_VALIDATE_EMAIL) ? 'email' : 'username';
-            if (Auth::guard('mahasiswa')->attempt([$fieldType => addslashes($request->username), 'password' => $request->password, 'aktif' => 'Y'],false)) {
-                $user=Auth::guard('mahasiswa')->user();
-                $request->session()->put('id',$user->id);
-                $request->session()->put('nama',$user->nama);
-                $request->session()->put('nim',$user->nim);
-                $request->session()->put('kelas',$user->kelas);
-                $request->session()->put('role',$user->role);
-                return redirect()->intended('/account/home');
+            if (Auth::attempt([$fieldType => addslashes($request->username), 'password' => $request->password, 'aktif' => 'Y', 'role' => 'peserta'],false)) {
+                $cekPIN=Ujian::where('pin',$request->pin)->where('status','published');
+                if($cekPIN->count()>0){
+                    $user=Auth::user();
+
+                    $detailData=DB::table($user->type)->where('user_id',$user->id)->first();
+                    $detailUjian=$cekPIN->first();
+                    $request->session()->put('id',$user->id);
+                    $request->session()->put('ujian_id',$detailUjian->id);
+                    $request->session()->put('detailUser',$detailData);
+                    $request->session()->put('role',$user->role);
+                    return redirect()->intended('ujian/pra-ujian');
+
+                   
+                }else{
+                    return back()->withErrors([
+                        'pin' => 'PIN is not valid',
+                    ])->onlyInput('pin');
+                }
+                
                 
                 
             }
@@ -214,6 +226,8 @@ class LoginController extends Controller
             return back()->withErrors([
                 'password' => 'Username and Password is not valid',
             ])->onlyInput('password');
+
+  
     }
 
     public function logout(Request $request){

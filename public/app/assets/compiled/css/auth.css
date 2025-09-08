@@ -1,19 +1,77 @@
-body{background-color:var(--bs-body-bg)}#auth{height:100vh;overflow-x:hidden}#auth #auth-right{height:100%;background:bisque;}#auth #auth-left{padding:1rem;max-width:400px;}#auth #auth-left .auth-title{font-size:2.5rem;margin-bottom:1rem}#auth #auth-left .auth-subtitle{font-size:1.2rem;line-height:2rem;color:#a8aebb}#auth #auth-left .auth-logo{margin-bottom:2rem}#auth #auth-left .auth-logo img{height:2rem}@media screen and (max-width: 1399.9px){#auth #auth-left{padding:3rem}}@media screen and (max-width: 767px){#auth #auth-left{padding:5rem}}@media screen and (max-width: 576px){#auth #auth-left{padding:5rem 3rem}}html[data-bs-theme=dark] #auth-right{background:url(./png/4853433.png),linear-gradient(90deg,#2d499d,#3f5491)}
+body{background-color:#ff1493;}
+#auth{height:100vh;overflow-x:hidden}#auth #auth-right{height:100%;}#auth #auth-left{padding:1rem;max-width:400px;}#auth #auth-left .auth-title{font-size:2.5rem;margin-bottom:1rem}#auth #auth-left .auth-subtitle{font-size:1.2rem;line-height:2rem;color:#a8aebb}#auth #auth-left .auth-logo{margin-bottom:2rem}#auth #auth-left .auth-logo img{height:2rem}@media screen and (max-width: 1399.9px){#auth #auth-left{padding:3rem}}@media screen and (max-width: 767px){#auth #auth-left{padding:5rem}}@media screen and (max-width: 576px){#auth #auth-left{padding:5rem 3rem}}html[data-bs-theme=dark] #auth-right{background:url(./png/4853433.png),linear-gradient(90deg,#2d499d,#3f5491)}
+#auth #auth-right {
+    height: 100%;
+    background-image: url('/app/assets/static/images/bg/bg-login.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+    z-index: -1;
+    margin-right: -63px;
+}
+
+#auth #auth-right::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #ff1493a1; /* Menggunakan background yang sama */
+    filter: brightness(50%); /* Atur efek filter */
+    z-index: -1; /* Tetap di belakang teks */
+}
+
+.wrapper-login{
+    border-radius: 60px 0px 0px 60px;
+    background: #FFF;
+}
 .img-captcha{
     width: 168px;
     height: 45px;
     background-color:#dfdbdb;
 }
 
-#auth #auth-right {
-    height: 100%;
-    background: bisque;
-    background-image: url('/app/assets/static/images/bg/menara-phinisi-unm.png');
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: bottom;
+.bg-pink{
+    background: #ff1493;
+    border-color: #ff1493;
 }
+.btn-pink{
+    background: #ff1493;
+    border-color: #ff1493;
+    color: #FFF;
+    --bs-btn-color: #fff;
+    --bs-btn-bg: #ff1493;
+    --bs-btn-border-color: #ff1493;
+    --bs-btn-hover-color: #fff;
+    --bs-btn-hover-bg: #ee56a8;
+    --bs-btn-hover-border-color: #ee56a8;
+    --bs-btn-focus-shadow-rgb: 95, 118, 200;
+    --bs-btn-active-color: #fff;
+    --bs-btn-active-bg: #ee56a8;
+    --bs-btn-active-border-color: #32478f;
+    --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, .125);
+    --bs-btn-disabled-color: #fff;
+    --bs-btn-disabled-bg: #ff1493;
+    --bs-btn-disabled-border-color: #ff1493;
+}
+
+.btn-pink:hover{
+    background: #ee56a8;
+    border-color: #ee56a8;
+    color: #FFF;
+}
+
+
 #auth #auth-left .auth-logo img {
-    height: 4rem;
+    height: 6rem;
+}
+
+@media (max-width: 576px) {
+    .wrapper-login{
+        border-radius: 0px 0px 0px 0px;
+        background: #FFF;
+    }
 }
 

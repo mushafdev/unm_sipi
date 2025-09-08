@@ -7,10 +7,12 @@
     "require": {
         "php": "^8.2",
         "barryvdh/laravel-dompdf": "^3.0",
+        "inertiajs/inertia-laravel": "^2.0",
         "laravel/framework": "^11.9",
         "laravel/tinker": "^2.9",
         "mews/captcha": "^3.3",
         "spatie/image": "^3.7",
+        "spatie/laravel-permission": "^6.10",
         "yajra/laravel-datatables-oracle": "^11.0"
     },
     "require-dev": {

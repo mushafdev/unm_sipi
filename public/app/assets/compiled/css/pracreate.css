@@ -1,0 +1,65 @@
+.source-card {
+    border: 3px solid #e9ecef;
+    border-radius: 15px;
+    padding: 2rem;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+    background: white;
+}
+
+.source-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(102, 126, 234, 0.1), transparent);
+    transition: left 0.5s;
+}
+
+.source-card:hover::before {
+    left: 100%;
+}
+
+.source-card:hover {
+    transform: translateY(-8px);
+    border-color: #ff1393;
+    box-shadow: var(--hover-shadow);
+}
+
+.source-card.selected {
+    border-color: #ff1393;
+    background: linear-gradient(135deg, #ff139308, #764ba208);
+    transform: translateY(-8px);
+    box-shadow: var(--hover-shadow);
+}
+
+.source-icon {
+    font-size: 4rem;
+    color: #ff1393;
+    margin-bottom: 1.5rem;
+}
+
+.source-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #495057;
+    margin-bottom: 1rem;
+}
+
+.source-description {
+    color: #6c757d;
+    line-height: 1.6;
+}
+
+#tablePendaftaran tbody tr {
+    cursor: pointer;
+}
+#tablePendaftaran tbody tr:hover {
+    background-color: #f1f1f1;
+}

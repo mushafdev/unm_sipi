@@ -58,7 +58,9 @@
                                     <div class="form-group">
                                         <label for="role" class="form-label" >Role<span class="text-danger ms-0">*</span></label>
                                         <select name="role" id="role" class="form-control" required>
-                                            <option value="superadmin">Superadmin</option>
+                                            @foreach ($roles as $dt)
+                                                <option value="{{$dt->name}}">{{Str::ucfirst($dt->name)}}</option>
+                                            @endforeach
                                         </select>
                                     </div>
                                     <div class="form-group">
@@ -90,5 +92,5 @@
     </section>
 </div>
 
-<script src="{{asset('app/assets/pages/users/users.js')}}"></script>
+<script src="{{asset('app/assets/pages/users/users.js')}}?v={{identity()['assets_version']}}"></script>
 @endsection

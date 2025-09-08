@@ -18,8 +18,11 @@
                     </h5>
                 </div>
                 <div>
+                    @can('user-create')
                     <a href="{{route('users.create')}}" class="btn icon icon-left btn-success">
-                        <i class="bi bi-plus-circle"></i> Create</a>
+                        <i class="bi bi-plus-circle"></i> Tambah</a>
+                        
+                    @endcan
                 </div>
 
             </div>
@@ -47,5 +50,5 @@
     </section>
 </div>
 
-<script src="{{asset('app/assets/pages/users/users_list.js')}}"></script>
+<script src="{{asset('app/assets/pages/users/users_list.js')}}?v={{identity()['assets_version']}}"></script>
 @endsection

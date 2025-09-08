@@ -1,0 +1,57 @@
+.body-container {
+    background-image: url(../portal-login-bg.png);
+    background-position: center;
+    background-size: cover;
+    max-width: 100%;
+    min-height: 100vh;
+    height: fit-content;
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+.login-page, .logged-out-page {
+    height: auto;
+    width: 100%;
+    max-width: 1080px;
+}
+
+.card-image-login {
+    background-image: url(../../static/images/bg/yps-bg.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+    z-index: 0; /* Pastikan teks tetap terlihat di atas filter */
+}
+
+.card-image-login::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgb(137 217 255 / 50%); /* Menggunakan background yang sama */
+    filter: brightness(50%); /* Atur efek filter */
+    z-index: -1; /* Tetap di belakang teks */
+}
+
+.img-captcha{
+    width: 168px;
+    height: 45px;
+    background-color:#dfdbdb;
+}
+
+#auth #auth-right {
+    height: 100%;
+    background: bisque;
+    background-image: url('/app/assets/static/images/bg/menara-phinisi-unm.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: bottom;
+}
+#auth #auth-left .auth-logo img {
+    height: 4rem;
+}
+

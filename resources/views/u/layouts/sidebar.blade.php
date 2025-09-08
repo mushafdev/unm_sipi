@@ -1,9 +1,9 @@
 <div id="sidebar">
     <div class="sidebar-wrapper active">
         <div class="sidebar-header position-relative">
-            <div class="d-flex justify-content-between align-items-center">
+            <div class="d-flex justify-content-between align-items-center" style="flex-flow: column;">
                 <div class="logo">
-                    <a href="index.html"><img src="{{asset('app/assets/compiled/svg/logo.svg')}}" alt="Logo" srcset=""></a>
+                    <h2 class="mb-0 text-warning font-bold fs-4">CBT<span class="text-primary">System</span></h2>
                 </div>
                 <div class="theme-toggle d-flex gap-2  align-items-center mt-2">
                     <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true"
@@ -41,57 +41,19 @@
         <div class="sidebar-menu">
             <ul class="menu">
                 
-                <li class="sidebar-item {{ request()->is('account/home') ? 'active' : '' }}">
-                    <a href="{{route('u.dashboard')}}" class='sidebar-link'>
-                        <i class="bi bi-grid-fill"></i>
-                        <span>Home</span>
+                <li class="sidebar-item {{ request()->is('ujian/pra-ujian','ujian/*') ? 'active' : '' }}">
+                    <a href="{{route('ujian.pra-ujian')}}" class='sidebar-link'>
+                        <i class="bi bi-star"></i>
+                        <span>Ujian</span>
                     </a>
                 </li>
-                <li class="sidebar-item {{ request()->is('group','group/*') ? 'active' : '' }}">
-                    <a href="{{route('group.create')}}" class='sidebar-link'>
-                        <i class="bi bi-people"></i>
-                        <span>Pengelompokan</span>
-                    </a>
-                </li>
-                <li class="sidebar-item {{ request()->is('logbook','logbook/*') ? 'active' : '' }}">
-                    <a href="{{route('logbook.index')}}" class='sidebar-link'>
-                        <i class="bi bi-book"></i>
-                        <span>Logbook</span>
-                    </a>
-                </li>
-                <li class="sidebar-item {{ request()->is('group-lokasi','group-lokasi/*') ? 'active' : '' }}">
-                    <a href="{{route('group-lokasi.index')}}" class='sidebar-link'>
-                        <i class="bi bi-building"></i>
-                        <span>Info Lokasi PI</span>
-                    </a>
-                </li>
-                <li class="sidebar-item has-sub {{ request()->is('document/*') ? 'active' : '' }}">
-                    <a href="#" class='sidebar-link'>
-                        <i class="bi bi-file-earmark-pdf"></i>
-                        <span>Dokumen</span>
-                    </a>
-                    <ul class="submenu ">
-                        
-                        <li class="submenu-item {{ request()->is('document/permohonan') ? 'active' : '' }}">
-                            <a href="{{route('document.permohonan')}}" class="submenu-link">Permohonan</a>
-                        </li>
-                        <li class="submenu-item {{ request()->is('document/berkas-pi') ? 'active' : '' }}">
-                            <a href="{{route('document.berkas_pi')}}" class="submenu-link">Berkasi PI</a>
-                            
-                        </li>
-                        <li class="submenu-item {{ request()->is('document/berkas-seminar') ? 'active' : '' }}">
-                            <a href="{{route('document.berkas_seminar')}}" class="submenu-link">Berkas Seminar</a>
-                            
-                        </li>
-                        
-                    </ul>
-                </li>
-                <li class="sidebar-item {{ request()->is('setting','setting/*') ? 'active' : '' }}">
-                    <a href="{{route('setting.index')}}" class='sidebar-link'>
+{{--                
+                <li class="sidebar-item {{ request()->is('account') ? 'active' : '' }}">
+                    <a href="{{route('account')}}" class='sidebar-link'>
                         <i class="bi bi-person-bounding-box"></i>
                         <span>My Account</span>
                     </a>
-                </li>
+                </li> --}}
                 <li class="sidebar-item ">
                     <a href="{{route('login.logout')}}" class='sidebar-link text-danger'>
                         <i class="bi bi-box-arrow-left text-danger"></i>

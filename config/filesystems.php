@@ -50,12 +50,23 @@ return [
             'url' => env('APP_URL').'/images',
         ],
 
-        'jembatan_gambar' => [
+        'pasien_photo' => [
             'driver' => 'local',
-            'root' => storage_path('app/public/images/jembatan_gambar'),
-            'url' => env('APP_URL').'/images/jembatan_gambar',
+            'root' => storage_path('app/public/images/pasien_photo'),
+            'url' => env('APP_URL').'/images/pasien_photo',
         ],
         
+        'foto_before' => [
+            'driver' => 'local',
+            'root' => storage_path('app/public/images/foto_before'),
+            'url' => env('APP_URL').'/images/foto_before',
+        ],
+        
+        'soal_gambar' => [
+            'driver' => 'local',
+            'root' => storage_path('app/public/images/soal_gambar'),
+            'url' => env('APP_URL').'/images/soal_gambar',
+        ],
         'users_photo' => [
             'driver' => 'local',
             'root' => storage_path('app/public/images/users_photo'),

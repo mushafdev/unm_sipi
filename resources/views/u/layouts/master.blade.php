@@ -19,14 +19,8 @@
     <link rel="stylesheet" href="{{asset('app/assets/compiled/css/app-dark.css')}}">
     <link rel="stylesheet" href="{{asset('app/assets/compiled/css/iconly.css')}}">
     <link rel="stylesheet" href="{{asset('app/assets/compiled/css/cst.css')}}">
-    <link rel="stylesheet" href="{{asset('app/assets/extensions/datatables.net-bs5/css/dataTables.bootstrap5.css')}}">
-    <link rel="stylesheet" href="{{asset('app/assets/extensions/datatables.net-bs5/css/responsive.bootstrap5.css')}}">
-    <link rel="stylesheet" href="{{asset('app/assets/extensions/select2/select2.min.css')}}">
     <link rel="stylesheet" href="{{asset('app/assets/extensions/sweetalert2/sweetalert2.min.css')}}">
     <script src="{{asset('app/assets/extensions/jquery/jquery.min.js')}}"></script>
-    <script src="{{asset('app/assets/extensions/datatables.net-bs5/js/dataTables.js')}}"></script>
-    <script src="{{asset('app/assets/extensions/datatables.net-bs5/js/dataTables.responsive.js')}}"></script>
-    <script src="{{asset('app/assets/extensions/datatables.net-bs5/js/dataTables.bootstrap5.js')}}"></script>
     
 </head>
 
@@ -47,10 +41,7 @@
     <script src="{{asset('app/assets/static/js/components/dark.js')}}"></script>
     <script src="{{asset('app/assets/extensions/perfect-scrollbar/perfect-scrollbar.min.js')}}"></script>
     <script src="{{asset('app/assets/compiled/js/app.js')}}"></script>
-    <script src="{{asset('app/assets/extensions/parsleyjs/parsley.min.js')}}"></script>
     <script src="{{asset('app/assets/extensions/sweetalert2/sweetalert2.min.js')}}"></script>
-    <script src="{{asset('app/assets/extensions/select2/select2.min.js')}}"></script>
-    <script src="{{asset('app/assets/static/js/helper/global.js')}}"></script>
 
     
 

@@ -63,14 +63,17 @@
                                     <div class="form-group">
                                         <label for="role" class="form-label" >Role<span class="text-danger ms-0">*</span></label>
                                         <select name="role" id="role" class="form-control" required>
-                                            <option value="superadmin">Superadmin</option>
+                                            @foreach ($roles as $dt)
+                                                <option value="{{$dt->name}}" {{$dt->name==$data->role?'selected':'';}}>{{Str::ucfirst($dt->name)}}</option>
+                                            @endforeach
                                         </select>
                                     </div>
                                     <div class="form-group">
                                         <label for="aktif" class="form-label" >Status<span class="text-danger ms-0">*</span></label>
                                         <select name="aktif" id="aktif" class="form-control" required>
-                                            <option value="Y">Aktif</option>
-                                            <option value="N">Tidak Aktif</option>
+                                            @foreach ($status_aktif as $k=>$v )
+                                                <option value="{{$k}}" {{$k==$data->aktif?'selected':'';}}>{{$v}}</option>
+                                            @endforeach
                                         </select>
                                     </div>
                                     <div class="form-group">
@@ -87,7 +90,7 @@
                                 <div class="col-md-12 text-end">
                                     <a href="{{route('users.index')}}" class="btn icon icon-left btn-light"><i class="bi bi-arrow-left-square"></i> Kembali</a>
                                     <a href="{{route('users.create')}}" class="btn icon icon-left btn-success">
-                                        <i class="bi bi-plus-circle"></i> Create</a>
+                                        <i class="bi bi-plus-circle"></i> Tambah</a>
                                     <button type="button" id="update" class="btn icon icon-left btn-primary"><i class="bi bi-save"></i> Simpan</button>
                                 </div>
                             </div>
@@ -99,5 +102,5 @@
     </section>
 </div>
 
-<script src="{{asset('app/assets/pages/users/users.js')}}"></script>
+<script src="{{asset('app/assets/pages/users/users.js')}}?v={{identity()['assets_version']}}"></script>
 @endsection

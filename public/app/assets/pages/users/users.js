@@ -52,7 +52,7 @@ $("#save").on('click',function(e) {
         }
     });
     }else {
-    return false();
+    return false;
     }
 
 });
@@ -102,7 +102,7 @@ $("#update").on('click',function(e) {
         }
     });
     }else {
-    return false();
+    return false;
     }
 
 });
